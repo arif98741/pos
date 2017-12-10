@@ -30,6 +30,33 @@ class DB {
         }
     }
 
+    public function selectFetchAssoc($query) {
+        $stmt = $this->link->query($query);
+        if ($stmt->num_rows > 0) {
+            return $stmt->fetch_assoc();
+        } else {
+            return false;
+        }
+    }
+
+    public function selectFetchArray($query) {
+        $stmt = $this->link->query($query);
+        if ($stmt->num_rows > 0) {
+            return $stmt->fetch_array();
+        } else {
+            return false;
+        }
+    }
+
+    public function selectFetchObject($query) {
+        $stmt = $this->link->query($query);
+        if ($stmt->num_rows > 0) {
+            return $stmt->fetch_object();
+        } else {
+            return false;
+        }
+    }
+
     public function insert($query) {
         $stmt = $this->link->query($query);
         if ($stmt) {
@@ -74,6 +101,10 @@ class DB {
         } else {
             return "nothing";
         }
+    }
+
+    public function __destruct() {
+        unset($this->link);
     }
 
 }

@@ -2,7 +2,7 @@
 
 <?php
 
-Session::destroy();
+session_destroy();
 header("location: login.php");
 ?>
 

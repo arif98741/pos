@@ -207,6 +207,7 @@ nav ul li ul{}
     width: 150px;
     height: 40px;
     font-size: 18px;
+
 }
 .reset_button{
     background: #ffcccc;
@@ -236,5 +237,9 @@ nav ul li ul{}
     margin: 0px;
 }
 .footer .copyright{
-    
+
+}
+
+.footer{
+
 }

@@ -1,21 +1,28 @@
 <?php
-$filepath = realpath(dirname(__DIR__));
-include_once $filepath . '/classes/Session.php';
-include_once $filepath . '/classes/DB.php';
-include_once $filepath . '/classes/Login.php';
-include_once $filepath . '/classes/Product.php';
-include_once $filepath . '/classes/Supplier.php';
-include_once $filepath . '/classes/Invoice.php';
-include_once $filepath . '/helper/Helper.php';
+$path = realpath(dirname(__DIR__));
+include_once $path . '/classes/Session.php';
+Session::checkSession();
+
+function __autoload($class) {
+    $filepath = realpath(dirname(__DIR__));
+    include_once $filepath . '/classes/' . $class . '.php';
+}
+
+include_once $path . '/helper/Helper.php';
 date_default_timezone_set('Asia/Dhaka');
 error_reporting(E_ALL);
-Session::checkSession();
+
 $db = new DB();
 $log = new Login();
 $pro = new Product();
+$sel = new Sell();
 $sup = new Supplier();
+$cus = new Customer();
 $inv = new Invoice();
+$ext = new Extra();
 $help = new Helper();
+
+
 if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     session_destroy();
     echo "<script>window.location = 'login.php';</script>";
@@ -27,17 +34,16 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
         <meta charset="UTF-8">
         <!--bootstrap css-->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap.min.css.map" rel="stylesheet">
         <!--font awesome css-->
         <link href="assets/css/font-awesome.min.css" rel="stylesheet">
         <!--jquery ui css-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-
+        <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
 
         <!--developer css-->
         <link href="assets/css/style.css" rel="stylesheet">
-        <!--datetime picker css-->
-        <!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />-->
         <!--material css-->
+        <link href="assets/css/material.min.css" rel="stylesheet">
 
         <!--datatables-->
         <!--        <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">-->
@@ -81,16 +87,25 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customer<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="addcustomer.php">Add Customer</a></li>
-                                    <li><a href="#">Customer List</a></li>
+                                    <li><a href="customerlist.php">Customer List</a></li>
                                     <li><a href="#">Others Will Be Added</a></li>
 
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Invoice<span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sales<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="addsell.php">Sale Product</a></li>
+                                    <li><a href="viewsales.php">Sales List</a></li>
+                                    <li><a href="#">Others</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Purchase<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="addinvoice.php">Add Invoice</a></li>
-                                    <li><a href="#">Invoice List</a></li>
+                                    <li><a href="invoices.php">Invoice List</a></li>
 
                                 </ul>
                             </li>
@@ -103,7 +118,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>&nbsp;Ariful Islam (admin)<span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>&nbsp;<?php echo Session::get('name'); ?> (<?php echo Session::get('status') ?>)<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="?action=logout"><i class="fa fa-sign-out"></i>Logout</a></li>
                                 </ul>
@@ -114,3 +129,4 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                 </div><!--/.container-fluid -->
             </nav>
         </header>
+        <?php $ext->showGroup(); ?>

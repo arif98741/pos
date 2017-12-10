@@ -1,6 +1,7 @@
 <?php include 'lib/header.php'; ?>
 <?php
 //code for adding product to database
+$message = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $message = $pro->addProduct($_POST);
 }
@@ -11,7 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="content_section">
         <div class="page_info">
             <div class="page_info_left">
-                <h3><i class="fa fa-chevron-circle-right"></i>&nbsp;Data Results For Products</h3>
+
+                <h3><i class="fa fa-chevron-circle-right"></i>&nbsp;Products</h3>
             </div>
             <div class="page_info_right">
                 <a href="addproduct.php" class="btn btn-success add_new_pro_btn"><i class="fa fa-plus"></i> Add New Product</a>
@@ -19,6 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             </div>
         </div>
+        <?php
+        if (isset($message) && $message != '') {
+            echo $message;
+        }
+        ?>
 
         <?php
         if (isset($_GET['product_id'])) {
@@ -31,10 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         ?>
 
-        <table class="table-bordered  display" id="product_table" width="100%">
+        <table class="table-bordered mdl-data-table" cellspacing="4" id="product_table" width="100%">
             <thead>
                 <tr>
-                    <th># ID</th>
+                    <th>#ID</th>
                     <th>Name</th>
                     <th>Type</th>
                     <th>Group</th>
@@ -49,11 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </thead>
             <tbody>
                 <?php
-                if (isset($message)) {
-                    echo "<tr style='background: #ddd;'>";
-                    echo "<td colspan='12'>" . "Product Already Exist" . "</td>";
-                    echo "</tr>";
-                }
                 $status = $pro->showProduct();
 
                 if ($status) {
@@ -72,8 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <td><?php echo $result['price'] . ".00"; ?></td>
                             <td><?php echo $help->formatDate($result['last_update'], 'd-m-Y g:ia'); ?></td>
                             <td>
-                                <a href="editproduct.php?product_id=<?php echo $result['serial']; ?>" class="btn" style="border-radius: 3px;" title="click to edit" ><i class="fa fa-pencil"></i></a>
-                                <a href="?product_id=<?php echo $result['serial']; ?>" class="btn" style="border-radius: 3px;" title="click to delete" onclick="return confirm('are you sure to delete?')" id="rowdelete" delid="<?php echo $result['serial']; ?>"><i class="fa fa-trash"></i></a>
+                                <a href="viewproduct.php?product_id=<?php echo $result['serial']; ?>" style="border-radius: 3px;" title="click to view" ><i class="fa fa-eye  btn"></i></a>
+                                <a href="editproduct.php?product_id=<?php echo $result['serial']; ?>" style="border-radius: 3px;" title="click to edit" ><i class="fa fa-pencil-square-o btn"></i></a>
+                                <a href="?product_id=<?php echo $result['serial']; ?>"  style="border-radius: 3px;" title="click to delete" onclick="return confirm('are you sure to delete?')" id="rowdelete" delid="<?php echo $result['serial']; ?>"><i class="fa fa-trash btn"></i></a>
                             </td>
 
                         </tr>
@@ -86,6 +89,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php }
                 ?>
             </tbody>
+            <tfoot>
+                <tr>
+                    <th>#ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Group</th>
+                    <th>Brand</th>
+                    <th>Size H</th>
+                    <th>Size W</th>
+                    <th>Color</th>
+                    <th>Price</th>
+                    <th>Last Update</th>
+                    <th>Action</th>
+                </tr>
+            </tfoot>
         </table>
     </div>
 

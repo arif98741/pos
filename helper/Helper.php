@@ -11,10 +11,10 @@ class Helper {
     }
 
     public function validation($data) {
-        $data = trim($data);
-        $data = htmlspecialchars($data);
-        $data = stripslashes($data);
-        return $data;
+        $c = trim($data);
+        $d = htmlspecialchars($c);
+        $e = stripslashes($d);
+        return $e;
     }
 
     public function realEscape($data) {
@@ -23,6 +23,12 @@ class Helper {
     }
 
     public function validAndEscape($data) {
+        $d = $this->validation($data);
+        $e = $this->realEscape($d);
+        return $e;
+    }
+
+    public function validArrayData($data) {
         $data = $this->validation($data);
         $data = $this->realEscape($data);
         return $data;
@@ -30,6 +36,38 @@ class Helper {
 
     public function formatDate($date, $format = 'd-m-Y') {
         return date($format, strtotime($date));
+    }
+
+    public function validEmail($data) {
+        if (filter_var($data, FILTER_VALIDATE_EMAIL)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function validInt($data) {
+        if (filter_var($data, FILTER_VALIDATE_INT)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function validFloat($data) {
+        if (filter_var($data, FILTER_VALIDATE_FLOAT)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function calQuantity($data) {
+        $total = 0;
+        for ($i = 0; $i < count($data); $i++) {
+            $total += $data;
+        }
+        return $total;
     }
 
 }

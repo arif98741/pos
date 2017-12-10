@@ -29,24 +29,24 @@
                 <table id="customer_table">
                     <tr>
                         <td>
-                            <input name="customer_id" id="customer_id"  class="form-control" type="text" placeholder="Customer ID" required="">
+                            <input name="customer_id" id="customerid"  class="form-control" type="text" placeholder="Customer ID" required="">
                         </td>
                         <td>
-                            <input name="customer_name" id="customer_name" class="form-control" type="text" placeholder="Customer Name" required="">
+                            <input name="customer_name" id="customername" class="form-control" type="text" placeholder="Customer Name" required="">
                         </td>
                         <td>
                             <input name="address" id="address" class="form-control" type="text" placeholder="Address"  required="">
 
                         </td>
                         <td>
-                            <input name="contact_no" id="contact_no" class="form-control" type="text" placeholder="Contact No"  required="">
+                            <input name="contact_no" id="contactno" class="form-control" type="text" placeholder="Contact No"  required="">
                         </td>
                     </tr>
 
                     <tr>
 
                         <td>
-                            <input  name="contact_person" id="contact_person" class="form-control" type="text" placeholder="Contact Person" required="">
+                            <input name="discount" id="discount" class="form-control" type="text" placeholder="Discount">
                         </td>
                         <td>
 
@@ -60,10 +60,10 @@
                             <input  name="remark" id="remark" class="form-control" type="text" placeholder="Remark" required="">
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="2">
-                            <p class="alert alert-danger" id="addcustomer_form_message" style="display:none;">Field Must Not Be Empty</p>
 
+                    <tr>
+                        <td colspan="2" id="">
+                            <p class="alert alert-danger" id="addcustomer_form_message" style="display:none;">Field Must Not Be Empty</p>
                         </td>
                         <td></td>
 

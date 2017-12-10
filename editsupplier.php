@@ -55,7 +55,7 @@
                             <tr>
 
                                 <td>
-                                    <input   name="contact_person" class="form-control" type="text" value="Contact Person" required="">
+                                    <input   name="contact_person" class="form-control" type="text" value="<?php echo $result['contact_person']; ?>" required="">
                                 </td>
                                 <td>
 
@@ -63,10 +63,10 @@
 
                                 </td>
                                 <td>
-                                    <input  name="opening_balance" class="form-control" type="text" value="Opening Balance" required="">
+                                    <input  name="opening_balance" class="form-control" type="text" value="<?php echo $result['opening_balance']; ?>" required="">
                                 </td>
                                 <td>
-                                    <input  name="remark" class="form-control" type="text" value="Remark" required="">
+                                    <input  name="remark" class="form-control" type="text" value="<?php echo $result['remark']; ?>" required="">
                                 </td>
                             </tr>
                             <tr>

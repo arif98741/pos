@@ -66,7 +66,6 @@
                     <tr>
                         <td colspan="2">
                             <p class="alert alert-danger" id="addsupplier_form_message" style="display:none;">Field Must Not Be Empty</p>
-
                         </td>
                         <td></td>
 

@@ -5,18 +5,24 @@
         <p class="developer">Developed By: explore it</p>
     </div>
 
-
 </div>
 
 </div>
 
 <script src="assets/js/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="assets/js/wickedpicker.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/datatable.min.js"></script>
+<script src="assets/js/material.min.js"></script>
 <script src="assets/js/functions.js"></script>
+<script src="assets/js/popup.js"></script>
 <script src="assets/js/main.js"></script>
-
-
+<script>
+    $(document).ready(function () {
+        var string = "hello";
+        var x = string.charAt(1);
+        console.log(x);
+    });
+</script>
 </body>
 </html>

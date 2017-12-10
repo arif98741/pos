@@ -1,11 +1,11 @@
 <?php echo include 'lib/header.php'; ?>
 <?php
+$msg = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['supplier_id']) && isset($_POST['submit'])) {
-    $sup->updateSupplier($_POST);
+    $msg = $sup->updateSupplier($_POST);
 }
-if (isset($_GET['action']) && $_GET['action'] == 'edit') {
-    $sup->selectSupplier($_GET);
-    echo "<script>window.location = 'supplierlist.php';</script>";
+if (isset($_GET['action']) && $_GET['action'] == 'delete') {
+    $sup->deleteSupplier($_GET);
 }
 ?>
 <div class="container">
@@ -20,6 +20,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit') {
 
             </div>
         </div>
+        <?php if (isset($msg) && $msg != ''): ?>
+            <?php echo $msg; ?>
+        <?php endif; ?>
 
 
 
@@ -35,31 +38,26 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit') {
                 </tr>
             </thead>
             <tbody>
-                <?php
-                $stmt = $sup->showSupplier();
+                <?php if ($stmt = $sup->showSupplier()): ?>
+                    <?php while ($result = $stmt->fetch_assoc()): ?>
+                        <tr style="text-align:center;"  id="rownumber<?php echo $result['serial']; ?>" class="data">
+                            <td><?php echo $result['supplier_id']; ?></td>
+                            <td><?php echo $result['supplier_name']; ?></td>
+                            <td><?php echo $result['address']; ?></td>
+                            <td><?php echo $result['contact_no']; ?></td>
+                            <td><?php echo $result['opening_balance']; ?></td>
+                            <td>
+                                <a href="viewsupplier.php?action=view&serial=<?php echo $result['serial']; ?>&supplier_id=<?php echo $result['supplier_id']; ?>"><i class="fa fa-eye" title="view supplier information"></i></a>&nbsp;&nbsp;
+                                <a href="editsupplier.php?action=edit&serial=<?php echo $result['serial']; ?>&supplier_id=<?php echo $result['supplier_id']; ?>"><i class="fa fa-pencil-square-o" title="click to edit"></i></a>
+                                <a href="?action=delete&serial=<?php echo $result['serial']; ?>&supplier_id=<?php echo $result['supplier_id']; ?>"><i id="deleterow"  rowid="<?php echo $result['serial']; ?>" class="fa fa-trash btn" style="color:red;" title="click to delete" onclick="return confirm('are you sure to delete?')" ></i></a>
+                            </td>
 
-                while ($result = $stmt->fetch_assoc()) {
-                    ?>
-                    <tr style="text-align:center;"  id="rownumber<?php echo $result['serial']; ?>" class="data">
-                        <td><?php echo $result['supplier_id']; ?></td>
-                        <td><?php echo $result['supplier_name']; ?></td>
-                        <td><?php echo $result['address']; ?></td>
-                        <td><?php echo $result['contact_no']; ?></td>
-                        <td><?php echo $result['opening_balance']; ?></td>
-                        <td>
-                            <a href="viewsupplier.php?action=view&serial=<?php echo $result['serial']; ?>&supplier_id=<?php echo $result['supplier_id']; ?>"><i class="fa fa-eye" title="view supplier information"></i></a>&nbsp;&nbsp;
-                            <a href="editsupplier.php?action=edit&serial=<?php echo $result['serial']; ?>&supplier_id=<?php echo $result['supplier_id']; ?>"><i class="fa fa-pencil" title="click to edit"></i></a>
-                            <a href="?action=edit&serial=<?php echo $result['serial']; ?>&supplier_id=<?php echo $result['supplier_id']; ?>"><i id="deleterow"  rowid="<?php echo $result['serial']; ?>" class="fa fa-trash btn" style="color:red;" title="click to delete" onclick="return confirm('are you sure to delete?')" ></i></a>
-
-                        </td>
-
-                    </tr>
-                <?php } ?>
+                        </tr>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </tbody>
 
         </table>
     </div>
-
-
 
     <?php echo include 'lib/footer.php'; ?>

@@ -1,0 +1,247 @@
+/* CSS Document */
+body {
+    background-color: #eee;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+}
+.main {
+    padding-right: 70px;
+    padding-left: 70px;
+    margin: 0 auto;
+    width: 800px;
+    padding:50px !important;
+
+}
+.header {
+    margin: 0 auto;
+    background: #C8E6C9;
+    color: #fff;
+}
+.header-text-result {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #1B5E20;
+    text-shadow: 0 0 03px #fff;
+}
+.header-text-2-result {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #F90;
+    text-shadow: 0 0 03px #fff;
+}
+.logo {
+    padding: 5px;
+}
+.exam-year {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+.marks {
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+.tab-1-1 {
+    font-size: 14px;
+}
+.tab-1-2 {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.tab-2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: right;
+}
+.tab-row {
+    padding: 05px;
+    font-size: 14px;
+}
+.footer-1 {
+    margin: 0 auto;
+    background: #0C0;
+    height: 3px;
+}
+.red-1 {
+    margin: 0 auto;
+    background: #F00;
+    height: 3px;
+}
+.footer-2 {
+    background: #eee;
+    height: 50px;
+    padding: 10px;
+    border-bottom-left-radius: 05px;
+    border-bottom-right-radius: 05px;
+}
+.footer-text {
+    padding: 05px;
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+}
+.serarch-again {
+    display:none;
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+.wraper-search {
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    line-height: 35px;
+    border: 1px solid #ccc;
+    padding: 20px 0px 20px 0px;
+    border-radius: 5px;
+}
+
+.bt-green {
+    -moz-box-shadow: inset 0px 1px 0px 0px #caefab;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #caefab;
+    box-shadow: inset 0px 1px 0px 0px #caefab;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811));
+    background: -moz-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+    background: -webkit-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+    background: -o-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+    background: -ms-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+    background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811', GradientType=0);
+    background-color: #77d42a;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #268a16;
+    display: inline-block;
+    cursor: pointer;
+    color: #306108;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #aade7c;
+    margin-top: 8px;
+    width: 100px;
+    padding: 8px;
+}
+.bt-green :hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a));
+    background: -moz-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+    background: -webkit-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+    background: -o-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+    background: -ms-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+    background: linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a', GradientType=0);
+    background-color: #5cb811;
+}
+.bt-gray {
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+    background: -moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background: -webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background: -o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background: -ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9', GradientType=0);
+    background-color: #f9f9f9;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #666666;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    margin-top: 8px;
+    width: 100px;
+    padding: 8px;
+}
+.bt-gray:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+    background: -moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background: -webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background: -o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background: -ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9', GradientType=0);
+    background-color: #e9e9e9;
+}
+.TFtable {
+    width: 100%;
+    border-collapse: collapse;
+}
+.TFtable td {
+    padding: 3px;
+    border: #fff 1px solid;
+
+}
+.TFtable tr {
+    background: #DEE1E4;
+}
+.TFtable th {
+    color: #000;
+    border: 1px solid #fff;
+    font-weight: bold;
+    padding: 3px;
+}
+.TFtable tr:nth-child(odd) {
+    background: #eeeeee;
+}
+.TFtable tr:nth-child(even) {
+    background: #DEE1E4;
+}
+.Mtable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.Mtable td {
+    padding: 3px;
+    border: #fff 1px solid;
+}
+.Mtable tr {
+    background: #DEE1E4;
+}
+.Mtable th {
+    color: #000;
+    border: 1px solid #fff;
+    font-weight: bold;
+    padding: 3px;
+    padding-left: 5px;
+}
+.Mtable tr:nth-child(odd) {
+    background: #DEE1E4;
+}
+.Mtable tr:nth-child(even) {
+    background: #DEE1E4;
+}
