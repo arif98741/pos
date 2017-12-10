@@ -11,7 +11,7 @@ This project includes several features. Such as
 	vii. Reporting System
 	viii. Graph Views in Home Page
 
-All these features still have not included this repository. But we are trying to add these features. You can pull request for developing this repository.
+All these features still have not included this repository. But we are trying to add these features. You can pull request for developing this repository at pre_test branch
 
 
 For using this project download from here https://github.com/arif98741/pos/archive/master.zip
