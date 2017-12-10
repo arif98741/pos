@@ -1,7 +1,12 @@
-# pos
+# Point Of Sale Management System
+
+##Introduction
 Point of Sale Management System is an open source project where anyone can participate, edit, modify and use from this repository.
 If you want to improve or develop this free project then you are highly welcome. This is a long term project.
-This project includes several features. Such as
+This project includes several features. 
+
+## Features
+
 	i. Add, edit, modify product
 	ii. Sell Product
 	iii. Stock Management
@@ -13,6 +18,7 @@ This project includes several features. Such as
 
 All these features still have not included this repository. But we are trying to add these features. You can pull request for developing this repository at pre_test branch
 
+## Installation
 
 For using this project download from here https://github.com/arif98741/pos/archive/master.zip
 After that, you will get a zip file called pos-master.zip . After that you need to unzip it by any extracting software such as winrar
@@ -21,6 +27,7 @@ Inside folder make a folder called pos. Inside pos folder keep all files downloa
 
 Make a database called dts in your phpmyadmin. import the database there(can be found at pos-master/database/dts.sql)
 
+## Login
 And finally go to your browser, open it with new table. write localhost/pos (it can be changed according to your installed server). Log in now with below details 
 	username: admin
 	password : admin
