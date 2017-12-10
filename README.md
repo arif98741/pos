@@ -29,6 +29,7 @@ Make a database called dts in your phpmyadmin. import the database there(can be 
 
 ## Login
 And finally go to your browser, open it with new table. write localhost/pos (it can be changed according to your installed server). Log in now with below details 
-	username: admin
-	password : admin
+
+	 username: admin
+	 password : admin
 	
