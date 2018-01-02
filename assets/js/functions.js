@@ -725,5 +725,7 @@ $(function () { //sales management
     setTimeout(function () {
         $('.fadeout').slideUp(500);
     }, 2000);
+    
+    
 
 });

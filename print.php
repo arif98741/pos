@@ -7,10 +7,10 @@
 session_start();
 date_default_timezone_set('Asia/Dhaka');
 $sell_id = '';
-include_once 'classes/DB.php';
+include_once 'classes/DATABASE.php';
 include 'classes/Session.php';
 include_once 'helper/Helper.php';
-$db = new DB();
+$db = new DATABASE();
 $help = new Helper();
 if (isset($_POST['sell_id'])) {
     $sell_id = $_POST['sell_id'];

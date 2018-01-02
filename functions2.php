@@ -1,6 +1,6 @@
 <?php
 
-include_once 'classes/DB.php';
+include_once 'classes/DATABASE.php';
 include_once 'classes/Supplier.php';
 include_once 'classes/Invoice.php';
 include_once 'classes/Extra.php';
@@ -11,7 +11,7 @@ $in = new Invoice();
 $ext = new Extra();
 $cus = new Customer();
 $sell = new Sell();
-$db = new DB();
+$db = new DATABASE();
 
 //insert customer information
 if (isset($_POST['page']) && $_POST['page'] = 'adcustomer' && $_POST['action'] == 'insert_customer') {

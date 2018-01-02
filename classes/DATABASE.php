@@ -1,6 +1,6 @@
 <?php
 
-class DB {
+class DATABASE {
 
     public $link;
     private $username = 'root';

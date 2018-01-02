@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['edit'])) {
 //delete invoice
 if (isset($_GET['action']) && isset($_GET['serial']) && isset($_GET['invoice_id'])) {
     $serial = $_GET['serial'];
-    echo $serial;
+    //echo $serial;
     $msg = $inv->deleteInvoice($serial, $_GET['invoice_id']);
 }
 ?>
