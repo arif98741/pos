@@ -3,7 +3,7 @@
 include_once 'Session.php';
 include_once 'DATABASE.php';
 include_once 'helper/Helper.php';
-//changes
+
 class Customer {
 
     private $dbObj;

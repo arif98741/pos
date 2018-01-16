@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14d5d81-50e2-474e-ac2a-d4b961f10290" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Customer.php" afterPath="$PROJECT_DIR$/classes/Customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codes.php" afterPath="$PROJECT_DIR$/codes.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,16 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="codes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/codes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="dts.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/dts.sql">
           <provider selected="true" editor-type-id="text-editor">
@@ -37,9 +27,20 @@
       <file leaf-file-name="Customer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/Customer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="352">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <marker date="1516101133127" expanded="true" signature="410:463" ph="select * fro... tbl_customer" />
+                <marker date="1516101133127" expanded="true" signature="757:816" ph="select * fro... tbl_customer" />
+                <marker date="1516101133127" expanded="true" signature="1806:2120" ph="insert into tbl_customer... " />
+                <marker date="1516101133127" expanded="true" signature="2163:2222" ph="select * fro... tbl_customer" />
+                <marker date="1516101133127" expanded="true" signature="3241:3299" ph="select * fro... tbl_customer" />
+                <marker date="1516101133127" expanded="true" signature="4053:4387" ph="UPDATE tbl_c... " />
+                <marker date="1516101133127" expanded="true" signature="4797:4844" ph="delete from " />
+                <marker date="1516101133127" expanded="true" signature="5888:5947" ph="select * fro... tbl_customer" />
+                <marker date="1516101133127" expanded="true" signature="6338:6612" ph="insert into tbl_customer... " />
+                <marker date="1516101133127" expanded="true" signature="7494:7547" ph="select * fro... tbl_customer" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,8 +64,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -126,6 +127,14 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="JavaScript Debug.index.php">
+    <configuration name="index.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/newpos/index.php" />
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
@@ -136,19 +145,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1516100971820</updated>
-      <workItem from="1516100978819" duration="28000" />
+      <workItem from="1516100978819" duration="298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28000" />
+    <option name="totallyTimeSpent" value="298000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -195,8 +204,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Customer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        <state relative-caret-position="352">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1516101133127" expanded="true" signature="410:463" ph="select * fro... tbl_customer" />
+            <marker date="1516101133127" expanded="true" signature="757:816" ph="select * fro... tbl_customer" />
+            <marker date="1516101133127" expanded="true" signature="1806:2120" ph="insert into tbl_customer... " />
+            <marker date="1516101133127" expanded="true" signature="2163:2222" ph="select * fro... tbl_customer" />
+            <marker date="1516101133127" expanded="true" signature="3241:3299" ph="select * fro... tbl_customer" />
+            <marker date="1516101133127" expanded="true" signature="4053:4387" ph="UPDATE tbl_c... " />
+            <marker date="1516101133127" expanded="true" signature="4797:4844" ph="delete from " />
+            <marker date="1516101133127" expanded="true" signature="5888:5947" ph="select * fro... tbl_customer" />
+            <marker date="1516101133127" expanded="true" signature="6338:6612" ph="insert into tbl_customer... " />
+            <marker date="1516101133127" expanded="true" signature="7494:7547" ph="select * fro... tbl_customer" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding />
         </state>
       </provider>
