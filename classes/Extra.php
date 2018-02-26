@@ -1,6 +1,6 @@
 <?php
 
-include_once 'DATABASE.php';
+include_once 'DB.php';
 include_once 'helper/Helper.php';
 
 class Extra {
@@ -10,7 +10,7 @@ class Extra {
 
     public function __construct() {
 
-        $this->dbObj = new DATABASE();
+        $this->dbObj = new DB();
         $this->helpObj = new Helper();
     }
 

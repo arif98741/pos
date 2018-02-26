@@ -1,6 +1,6 @@
 <?php
 
-include_once 'DATABASE.php';
+include_once 'DB.php';
 include_once 'Session.php';
 include_once 'helper/Helper.php';
 
@@ -11,7 +11,7 @@ class Login {
 
     public function __construct() {
 
-        $this->dbObj = new DATABASE();
+        $this->dbObj = new DB();
         $this->helpObj = new Helper();
     }
 

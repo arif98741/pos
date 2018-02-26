@@ -1,6 +1,6 @@
 <?php
 
-include_once 'DATABASE.php';
+include_once 'DB.php';
 include_once 'Session.php';
 include_once 'helper/Helper.php';
 
@@ -11,7 +11,7 @@ class Invoice {
 
     public function __construct() {
 
-        $this->dbObj = new DATABASE();
+        $this->dbObj = new DB();
         $this->helpObj = new Helper();
     }
 
@@ -164,18 +164,21 @@ class Invoice {
     public function deleteInvoice($serial, $invoice_id) {
         $serial = $this->helpObj->validAndEscape($serial);
         $invoice_id = $this->helpObj->validAndEscape($invoice_id);
-        $delquery = "delete from tbl_invoice where invoice_number='$invoice_id'";
+
+        $delquery = "delete from tbl_invoice where serial='$serial'";
         $st = $this->dbObj->delete($delquery);
         if ($st) {
-            $in_pro_del_q = "delete from tbl_invoice_products where invoice_id='$invoice_id'";
-            $invoice_products_st = $this->dbObj->delete($in_pro_del_q);
-            if ($invoice_products_st) {
-                return "<p class='alert alert-success fadeout'>Invoice Deleted Successfully<p>";
-            } else {
-                return "<p class='alert alert-warning fadeout'>Invoice Deleted Failed<p>";
+            $in_pro_query = "select * from tbl_invoice_products where invoice_id='$invoice_id'";
+            $in_pro_st = $this->dbObj->select($in_pro_query); //delete invoice 
+            if ($in_pro_st) {
+                $in_pro_del_q = "delete from tbl_invoice_products where invoice_id='$invoice_id'";
+                $invoice_products_st = $this->dbObj->delete($in_pro_del_q);
+                if ($invoice_products_st) {
+                    return "<p class='alert alert-success fadeout'>Invoice Deleted Successfully<p>";
+                } else {
+                    return "<p class='alert alert-warning fadeout'>Invoice Deleted Failed<p>";
+                }
             }
-        } else {
-            return "<p class='alert alert-warning fadeout'>Failed To Delete Invoice<p>";
         }
     }
 

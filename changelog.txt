@@ -1,0 +1,18 @@
+<!--point of sale project-->
+19-09-207
+1.Add supplierlist.php
+
+
+20-09-2017
+1. Change in header.php
+
+21-09-2017
+1.Change in function.js
+2.Change in funcions.php
+3.Add new page addinvoice.php
+4. Change date format in products.php
+
+28-09-2017
+1. Change in addinvoice.php
+2. Need to change query for getting date.
+

@@ -12,7 +12,7 @@ include_once $path . '/helper/Helper.php';
 date_default_timezone_set('Asia/Dhaka');
 error_reporting(E_ALL);
 
-$db = new DATABASE();
+$db = new DB();
 $log = new Login();
 $pro = new Product();
 $sel = new Sell();

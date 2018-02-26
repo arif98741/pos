@@ -1,6 +1,6 @@
 <?php
 
-include_once 'DATABASE.php';
+include_once 'DB.php';
 include_once 'Session.php';
 include_once 'helper/Helper.php';
 
@@ -12,7 +12,7 @@ class Sell {
 
     public function __construct() {
         $this->loginObj = new Helper();
-        $this->dbObj = new DATABASE();
+        $this->dbObj = new DB();
         $this->helpObj = new Helper();
     }
 

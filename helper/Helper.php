@@ -1,13 +1,13 @@
 <?php
 
-include_once 'classes/DATABASE.php';
+include_once 'classes/DB.php';
 
 class Helper {
 
     public $dbObj;
 
     function __construct() {
-        $this->dbObj = new DATABASE();
+        $this->dbObj = new DB();
     }
 
     public function validation($data) {

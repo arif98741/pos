@@ -17,12 +17,6 @@
 <script src="assets/js/functions.js"></script>
 <script src="assets/js/popup.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-    $(document).ready(function () {
-        var string = "hello";
-        var x = string.charAt(1);
-        console.log(x);
-    });
-</script>
+
 </body>
 </html>

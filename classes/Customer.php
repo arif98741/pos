@@ -1,7 +1,7 @@
 <?php
 
 include_once 'Session.php';
-include_once 'DATABASE.php';
+include_once 'DB.php';
 include_once 'helper/Helper.php';
 
 class Customer {
@@ -11,7 +11,7 @@ class Customer {
 
     public function __construct() {
 
-        $this->dbObj = new DATABASE();
+        $this->dbObj = new DB();
         $this->helpObj = new Helper();
     }
 
