@@ -1,6 +1,6 @@
 # Point Of Sale Management System
 
-##Introduction
+## Introduction
 Point of Sale Management System is an open source project where anyone can participate, edit, modify and use from this repository.
 If you want to improve or develop this free project then you are highly welcome. This is a long term project.
 This project includes several features. 
