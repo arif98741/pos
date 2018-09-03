@@ -19,8 +19,10 @@ $sel = new Sell();
 $sup = new Supplier();
 $cus = new Customer();
 $inv = new Invoice();
+$dash = new Dashboard();
 $ext = new Extra();
 $help = new Helper();
+$dash = new Dashboard();
 
 
 if (isset($_GET['action']) && $_GET['action'] == 'logout') {
@@ -64,23 +66,20 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.php">Sale Management System</a>
+                        <a class="navbar-brand" href="index.php">Point of Sale (POS)</a>
 
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li ><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">Static top</a></li>
-                            <li><a href="#">Fixed top</a></li>
-
+                           <!--  <li ><a href="./">Default <span class="sr-only">(current)</span></a></li>
+                            -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="addproduct.php">Add Product</a></li>
                                     <li><a href="products.php">Product List</a></li>
-                                    <li><a href="#">Something else here</a></li>
-
+                                    
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -88,8 +87,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                 <ul class="dropdown-menu">
                                     <li><a href="addcustomer.php">Add Customer</a></li>
                                     <li><a href="customerlist.php">Customer List</a></li>
-                                    <li><a href="#">Others Will Be Added</a></li>
-
+                                    
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -97,8 +95,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                 <ul class="dropdown-menu">
                                     <li><a href="addsell.php">Sale Product</a></li>
                                     <li><a href="viewsales.php">Sales List</a></li>
-                                    <li><a href="#">Others</a></li>
-
+                                    
                                 </ul>
                             </li>
                             <li class="dropdown">

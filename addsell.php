@@ -28,7 +28,7 @@
             <label>INVOICE No.</label>
             <?php
             // $last_in_st = $db->select("select * from tbl_sell order by serial desc limit 1");
-            $last_id = $db->select("select * from tbl_sell order by serial desc limit 1")->fetch_assoc();
+            $last_id = $db->link->query("select * from tbl_sell order by serial desc limit 1")->fetch_assoc();
             $rrr = $last_id['sell_id'];
             $rrr = substr($rrr, 6);
             $rrr = date('m') . date('Y') . ($rrr + 1);
@@ -57,7 +57,7 @@
                                             ?>
                                         </select>
                                     </b>
-                                    <button type="button" class="btn-primary po" data-toggle="modal" data-target=".add_customer_modal" title="Click To Add Customer"><i class="fa fa-user-plus"></i></button>
+                                    <!-- <button type="button" class="btn-primary po" data-toggle="modal" data-target=".add_customer_modal" title="Click To Add Customer"><i class="fa fa-user-plus"></i></button> -->
                                 </td>
                             </tr>
                             <tr>

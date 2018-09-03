@@ -1,9 +1,4 @@
 <?php
-//echo "<pre>";
-//print_r($_POST);
-//echo "</pre>";
-?>
-<?php
 session_start();
 date_default_timezone_set('Asia/Dhaka');
 $sell_id = '';
@@ -12,8 +7,10 @@ include 'classes/Session.php';
 include_once 'helper/Helper.php';
 $db = new DB();
 $help = new Helper();
-if (isset($_POST['sell_id'])) {
-    $sell_id = $_POST['sell_id'];
+
+if (isset($_GET['sell_id'])) {
+    redirect('location: index.php');
+    $sell_id = $_GET['sell_id'];
     $customer_id = $_POST['customer_id'];
     $seller = Session::get('userid');
     $sub_total = $_POST['sell_subtotal'];
@@ -25,15 +22,10 @@ if (isset($_POST['sell_id'])) {
     if ($check->num_rows > 0) {
         echo "There is an invoice having id " . $sell_id;
         // exit();
-    } else {
-        $sell_query = "insert into tbl_sell (sell_id,customer_id,seller,sub_total,grand_total,paid,due,updateby) values('$sell_id','$customer_id','$seller','$sub_total','$grand_total','$paid','$due','$update_by')";
-        $sell_query_st = $db->link->query($sell_query);
-
-        header('location: viewsale.php?action=view&sell_id='.$sell_id);
-        exit();
-    }
+    } 
 }
 ?>
+hi
 
 <!DOCTYPE html>
 <html lang="en">

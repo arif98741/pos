@@ -22,7 +22,7 @@ class DB {
     }
 
     public function select($query) {
-        $stmt = $this->link->query($query);
+        $stmt = $this->link->query($query) or die($this->link->error). " error at line number ".__LINE__;
         if ($stmt->num_rows > 0) {
             return $stmt;
         } else {

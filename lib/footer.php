@@ -1,8 +1,8 @@
 
 <div class="footer" style="margin-top: 30px;">
     <div class="copyright">
-        <p class="copyright">&COPY;&nbsp;Copyright: Didar Tiles and Sanitary</p>
-        <p class="developer">Developed By: explore it</p>
+        <p class="copyright">&COPY;&nbsp;Copyright Ariful Islam | <a href="www.phpdark.com">PHPDark.com</a></p>
+        <p class="developer">Developed By: <a href="https://github.com/arif98741">Ariful Islam</a></p>
     </div>
 
 </div>

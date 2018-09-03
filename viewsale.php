@@ -12,26 +12,17 @@ include 'classes/Session.php';
 include_once 'helper/Helper.php';
 $db = new DB();
 $help = new Helper();
-if (isset($_POST['sell_id'])) {
-    $sell_id = $_POST['sell_id'];
-    $customer_id = $_POST['customer_id'];
-    $seller = Session::get('userid');
-    $sub_total = $_POST['sell_subtotal'];
-    $grand_total = $_POST['sell_grand_total'];
-    $paid = $_POST['sell_paid'];
-    $due = $_POST['sell_due'];
+if (isset($_GET['sell_id'])) {
+    $sell_id = $_GET['sell_id'];
+    
     $update_by = Session::get('userid');
     $check = $db->link->query("select * from tbl_sell where sell_id='$sell_id'");
     if ($check->num_rows > 0) {
-        echo "There is an invoice having id " . $sell_id;
-        // exit();
-    } else {
-        $sell_query = "insert into tbl_sell (sell_id,customer_id,seller,sub_total,grand_total,paid,due,updateby) values('$sell_id','$customer_id','$seller','$sub_total','$grand_total','$paid','$due','$update_by')";
-        $sell_query_st = $db->link->query($sell_query);
-
-        header('location: viewsale.php?action=view&sell_id='.$sell_id);
-        exit();
-    }
+        $stmt = $db->link->query("select * from tbl_sell join tbl_customer on tbl_sell.customer_id = tbl_customer.customer_id where tbl_sell.sell_id='$sell_id'") or die($db->link->error);
+        if ($stmt) {
+            $inv_data = $stmt->fetch_assoc();
+        }
+    } 
 }
 ?>
 
@@ -171,40 +162,30 @@ if (isset($_POST['sell_id'])) {
             <div class="page_title">
                 <h2>Bill/Invoice</h2>
             </div>
-            <?php
-            if (isset($_POST['customer_id'])) {
-                $cus_id = $_POST['customer_id'];
-                $cus_single_q_st = $db->link->query("select * from tbl_customer where customer_id = '$cus_id'");
-                if ($cus_single_q_st) {
-                    $single_cus_r = $cus_single_q_st->fetch_assoc();
-                } else {
-                    echo "No Customer Found";
-                }
-            }
-            ?>
+            
             <div class="information">
                 <div class="information_left">
                     <table style="text-align: center;">
                         <tr>
                             <td>Invoice No</td>
                             <td>:</td>
-                            <td><strong><?php echo $sell_id; ?></strong></td>
+                            <td><strong><?php echo $inv_data['sell_id']; ?></strong></td>
 
                         </tr>
                         <tr>
                             <td>Date</td>
                             <td>:</td>
-                            <td><?php echo date('d-m-Y'); ?></td>
+                            <td><?php echo $help->formatDate($inv_data['date'], $format = 'd-m-Y');  ?></td>
 
                         </tr>
                         <tr>
                             <td>Time</td>
                             <td>:</td>
-                            <td><?php echo date('g:i:s A'); ?></td>
+                            <td><?php echo $help->formatDate($inv_data['date'], $format = 'H:i A');  ?></td>
 
                         </tr>
                         <tr>
-                            <td>User</td>
+                            <td>Seller</td>
                             <td>:</td>
                             <td><?php echo Session::get('name'); ?></td>
 
@@ -218,25 +199,25 @@ if (isset($_POST['sell_id'])) {
                         <tr>
                             <td>Customer ID</td>
                             <td>:</td>
-                            <td><?php echo $single_cus_r['customer_id']; ?></td>
+                            <td><?php echo $inv_data['customer_id']; ?></td>
 
                         </tr>
                         <tr>
                             <td>Name</td>
                             <td>:</td>
-                            <td><?php echo $single_cus_r['customer_name']; ?></td>
+                            <td><?php echo $inv_data['customer_name']; ?></td>
 
                         </tr>
                         <tr>
                             <td>Address</td>
                             <td>:</td>
-                            <td><?php echo $single_cus_r['address']; ?></td>
+                            <td><?php echo $inv_data['address']; ?></td>
 
                         </tr>
                         <tr>
                             <td>Contact</td>
                             <td>:</td>
-                            <td><?php echo $single_cus_r['contact_no']; ?></td>
+                            <td><?php echo $inv_data['contact_no']; ?></td>
 
                         </tr>
 
@@ -262,6 +243,8 @@ if (isset($_POST['sell_id'])) {
                     </thead>
                     <tbody>
                         <?php
+                        echo $sell_id = $inv_data['sell_id'];
+                        echo $customer_id = $inv_data['customer_id'];
                         $update_q = "update tbl_sell_products set status = '1' where sell_id='$sell_id' and customer_id='$customer_id'";
                         $update_q_st = $db->link->query($update_q);
                         $q = "SELECT * FROM tbl_sell_products, tbl_product,tbl_group WHERE tbl_sell_products.product_id = tbl_product.product_id and tbl_sell_products.customer_id='$customer_id' and tbl_group.groupid = tbl_product.product_group and tbl_sell_products.sell_id='$sell_id' and tbl_sell_products.status='1' ORDER by tbl_sell_products.serial_no ASC";
@@ -323,58 +306,52 @@ if (isset($_POST['sell_id'])) {
                         <tr>
                             <td>DL CHARGE</td>
                             <td>:</td>
-                            <td><strong><?php echo $_POST['sell_dl']; ?></strong></td>
+                            <td><strong><?php echo $inv_data['dlcharge']; ?></strong></td>
 
                         </tr>
                         <tr>
                             <td>SUB TOTAL</td>
                             <td>:</td>
-                            <td><?php echo $total; ?></td>
+                            <td><?php echo $inv_data['sub_total']; ?></td>
 
                         </tr>
                         <tr>
                             <td>DISCOUNT(tk)</td>
                             <td>:</td>
-                            <td><?php echo $_POST ['sell_discount']; ?></td>
+                            <td><?php echo $inv_data['discount']; ?></td>
 
                         </tr>
                         <tr>
                             <td>VAT(%)</td>
                             <td>:</td>
-                            <td><?php echo $_POST ['sell_vat']; ?></td>
+                            <td><?php echo $inv_data ['vat']; ?></td>
 
                         </tr>
                         <tr>
                             <td><strong>GRAND TOTAL</strong></td>
                             <td>:</td>
-                            <td><?php echo $_POST['sell_grand_total']; ?></td>
+                            <td><?php echo $inv_data['sub_total']; ?></td>
 
                         </tr>
 
                         <tr>
                             <td>PAID</td>
                             <td>:</td>
-                            <td><?php echo $_POST['sell_paid']; ?></td>
-
+                            <td><?php echo $inv_data['paid']; ?></td>
                         </tr>
                         <tr>
                             <td>DUE</td>
                             <td>:</td>
-                            <td><?php echo $_POST['sell_due']; ?></td>
+                           <td><?php echo $inv_data['due']; ?></td>
 
                         </tr>
-                        <tr>
-                            <td><strong>PREVIOUS</strong></td>
-                            <td>:</td>
-                            <td>10</td>
-
-                        </tr>
-                        <tr>
+                      
+                       <!--  <tr>
                             <td><strong>BALANCE</strong></td>
                             <td>:</td>
-                            <td><?php echo $_POST['balance']; ?></td>
+                            <td><?php //echo $_POST['balance']; ?></td>
 
-                        </tr>
+                        </tr> -->
 
 
 
